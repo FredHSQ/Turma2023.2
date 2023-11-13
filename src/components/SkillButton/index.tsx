@@ -1,8 +1,8 @@
 import React from "react";
-import { TouchableOpacity, Image, Text } from "react-native";
-import SkillCircle from "../../../PngItem_2901848.png";
+import { Image, Text, TouchableOpacity } from "react-native";
+import SkillCircle from "../../assets/PngItem_2901848.png";
+import { skillProps } from "../../screens/Skills";
 import { styles } from "./styles";
-import { skillProps } from "../../../App";
 
 interface SkillButtonProps {
 	item: skillProps;
