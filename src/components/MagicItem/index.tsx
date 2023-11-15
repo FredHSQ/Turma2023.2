@@ -2,14 +2,20 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { styles } from './style';
 
-interface MagicItemProps {
-	name: string
+export interface MagicItemListProps {
+	index: string;
+	name: string;
+	url: string;
 }
 
-export const MagicItem = ({ name }: MagicItemProps) => {
+export interface MagicItemProps {
+	item: MagicItemListProps
+}
+
+export const MagicItem = ({ item }: MagicItemProps) => {
 	return <View style={styles.buttonMagicItem}>
 		<Text style={styles.textMagicItem}>
-			{ name }
+			{ item.name }
 		</Text>
 	</View>
 }

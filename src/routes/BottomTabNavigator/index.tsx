@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 export type RootTabParamList = {
 	Skills: {};
 	Shop: {};
-	Cart: {};
+	Cart: {	id: string };
 }
 
 export function BottomTabRoutes() {
