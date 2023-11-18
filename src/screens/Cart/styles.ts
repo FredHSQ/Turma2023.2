@@ -12,5 +12,10 @@ export const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 10,
+    },
+    containerPreco:{
+        marginBottom: 10,
+        justifyContent:"space-between",
+        flexDirection: 'row'
     }
 })

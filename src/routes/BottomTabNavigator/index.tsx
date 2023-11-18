@@ -6,13 +6,14 @@ import SkillIcon from '../../assets/fact_check_FILL0_wght400_GRAD0_opsz48.png';
 import ShopIcon from '../../assets/storefront_FILL0_wght400_GRAD0_opsz48.png';
 import CartIcon from '../../assets/shopping_cart_FILL0_wght400_GRAD0_opsz48.png';
 import { Cart } from '../../screens/Cart';
+import { CartProvider } from '../../context/CartContext';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export type RootTabParamList = {
 	Skills: {};
 	Shop: {};
-	Cart: {	id: string };
+	Cart: { id: string };
 }
 
 export function BottomTabRoutes() {

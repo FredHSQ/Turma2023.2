@@ -8,7 +8,8 @@ import { ModalItemDetails } from "../../components/Modals/ModalItemDetails";
 export const Shop = () => {
 	const [magicItemList, setMagicItemList] = useState<MagicItemListProps[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
-	const [isModalVisible, setIsModalVisible] = useState<boolean>(true);
+	const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+	const [selectedIndex, setSelectedIndex] = useState<string>('');
 
 	useEffect(() => {
 		listMagicItemList();
@@ -21,7 +22,8 @@ export const Shop = () => {
 			})
 			.catch(error => {
 				console.log(error.data);
-			}).finally(()=>{
+			})
+			.finally(() => {
 				setIsLoading(false);
 			})
 	}
@@ -38,12 +40,14 @@ export const Shop = () => {
 				<FlatList
 					data={magicItemList}
 					renderItem={({ item }) => {
-						return <TouchableOpacity onPress={()=> setIsModalVisible(true)}>
-							<MagicItem item={item} />
-						</TouchableOpacity>
+						return <MagicItem
+							setIsModalVisible={setIsModalVisible}
+							setSelectedIndex={setSelectedIndex}
+							item={item}
+						/>
 					}}
 				/>
 		}
-		<ModalItemDetails isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} />
+		{isModalVisible && <ModalItemDetails index={selectedIndex} isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} />}
 	</View>
 };
